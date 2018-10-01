@@ -25,22 +25,29 @@ namespace RoomRentalSystem
         }
         private void CheckUser(string usr, string pas)
         {
-            Form1.con.Open();
-            SqlCommand cmd = Form1.con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = string.Format("select passw from tbUser where uname = '{0}'", usr);
-            IDataReader reader = cmd.ExecuteReader();
-            if (reader.Read())
+            try
             {
-                if (pas.Equals(reader.GetString(reader.GetOrdinal("passw"))))
+                Form1.con.Open();
+                SqlCommand cmd = Form1.con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = string.Format("select passw from tbUser where uname = '{0}'", usr);
+                IDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
                 {
-                    Form1.loginform.Visible = false;
-                    Form1.menu.Visible = true;
+                    if (pas.Equals(reader.GetString(reader.GetOrdinal("passw"))))
+                    {
+                        Form1.loginform.Visible = false;
+                        Form1.menu.Visible = true;
+                    }
+                    else MessageBox.Show("The password isn't match.");
                 }
-                else MessageBox.Show("The password isn't match.");
+                else MessageBox.Show("The username is invalid.");
+                Form1.con.Close();
             }
-            else MessageBox.Show("The username is invalid.");
-            Form1.con.Close();
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
         }
         private void btnClose_Click(object sender, EventArgs e)
         {

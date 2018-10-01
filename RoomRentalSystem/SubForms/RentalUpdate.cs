@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace RoomRentalSystem.SubForms
 {
@@ -36,17 +37,27 @@ namespace RoomRentalSystem.SubForms
         {
             string sql = string.Format("update tbRental set PersonID = '{0}', RoomNo = '{1}', RentalDate = '{2}' where RentalID = '{3}')",
                txtCustomerID.Text, txtRoomNo.Text, dtpDate.Text, txtID.Text);
-            if (Form1.ExecuteQuery(sql) == null)
+            ExQuery(sql);
+        }
+        private void ExQuery(string sql)
+        {
+            try
             {
-                MessageBox.Show("Adding transaction is failed.");
+                Form1.con.Open();
+                SqlCommand cmd = Form1.con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = sql;
+                cmd.ExecuteNonQuery();
+                Form1.con.Close();
+                MessageBox.Show("Updated successfully!");
             }
-            else
+            catch (Exception e)
             {
-                MessageBox.Show("Added successfully");
-                ClearBox();
+                MessageBox.Show(e.ToString());
+                MessageBox.Show("Failed to update!!!");
+                Form1.con.Close();
             }
         }
-
         private void btnCencel_Click(object sender, EventArgs e)
         {
             ClearBox();

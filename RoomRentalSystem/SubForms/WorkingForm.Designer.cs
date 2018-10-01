@@ -40,6 +40,8 @@
             this.txtSalary = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.txtWorkingID = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cboPosition = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -84,8 +86,10 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel2.Controls.Add(this.cboPosition);
             this.panel2.Controls.Add(this.cboWorkerID);
             this.panel2.Controls.Add(this.btnCencel);
+            this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
@@ -126,13 +130,14 @@
             this.btnCencel.TabIndex = 32;
             this.btnCencel.Text = " Cencel";
             this.btnCencel.UseVisualStyleBackColor = false;
+            this.btnCencel.Click += new System.EventHandler(this.btnCencel_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label6.Location = new System.Drawing.Point(209, 190);
+            this.label6.Location = new System.Drawing.Point(209, 246);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(74, 26);
@@ -168,7 +173,7 @@
             this.txtSalary.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtSalary.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSalary.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtSalary.Location = new System.Drawing.Point(357, 187);
+            this.txtSalary.Location = new System.Drawing.Point(357, 243);
             this.txtSalary.Margin = new System.Windows.Forms.Padding(2);
             this.txtSalary.Name = "txtSalary";
             this.txtSalary.Size = new System.Drawing.Size(312, 32);
@@ -186,6 +191,7 @@
             this.btnSubmit.TabIndex = 21;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = false;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // txtWorkingID
             // 
@@ -197,6 +203,32 @@
             this.txtWorkingID.Name = "txtWorkingID";
             this.txtWorkingID.Size = new System.Drawing.Size(312, 32);
             this.txtWorkingID.TabIndex = 17;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label2.Location = new System.Drawing.Point(209, 190);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(90, 26);
+            this.label2.TabIndex = 30;
+            this.label2.Text = "Position";
+            // 
+            // cboPosition
+            // 
+            this.cboPosition.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cboPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboPosition.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cboPosition.FormattingEnabled = true;
+            this.cboPosition.Items.AddRange(new object[] {
+            "Security"});
+            this.cboPosition.Location = new System.Drawing.Point(357, 187);
+            this.cboPosition.Margin = new System.Windows.Forms.Padding(2);
+            this.cboPosition.Name = "cboPosition";
+            this.cboPosition.Size = new System.Drawing.Size(312, 33);
+            this.cboPosition.TabIndex = 35;
             // 
             // WorkingForm
             // 
@@ -229,5 +261,7 @@
         private System.Windows.Forms.TextBox txtWorkingID;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ComboBox cboPosition;
+        private System.Windows.Forms.Label label2;
     }
 }

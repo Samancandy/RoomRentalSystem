@@ -39,6 +39,7 @@
             this.btnCustomerSearch = new System.Windows.Forms.Button();
             this.cboCustomer = new System.Windows.Forms.ComboBox();
             this.txtCustomerSearch = new System.Windows.Forms.TextBox();
+            this.btnBack = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).BeginInit();
@@ -83,6 +84,7 @@
             this.panel2.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel2.Controls.Add(this.dgvCustomer);
+            this.panel2.Controls.Add(this.btnBack);
             this.panel2.Controls.Add(this.btnCustomerNew);
             this.panel2.Controls.Add(this.btnCustomerUpdate);
             this.panel2.Controls.Add(this.btnCustomerDelete);
@@ -111,7 +113,7 @@
             this.btnCustomerNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCustomerNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustomerNew.ForeColor = System.Drawing.Color.White;
-            this.btnCustomerNew.Location = new System.Drawing.Point(70, 413);
+            this.btnCustomerNew.Location = new System.Drawing.Point(267, 415);
             this.btnCustomerNew.Name = "btnCustomerNew";
             this.btnCustomerNew.Size = new System.Drawing.Size(125, 35);
             this.btnCustomerNew.TabIndex = 26;
@@ -128,7 +130,7 @@
             this.btnCustomerUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCustomerUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustomerUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnCustomerUpdate.Location = new System.Drawing.Point(276, 413);
+            this.btnCustomerUpdate.Location = new System.Drawing.Point(473, 415);
             this.btnCustomerUpdate.Name = "btnCustomerUpdate";
             this.btnCustomerUpdate.Size = new System.Drawing.Size(125, 35);
             this.btnCustomerUpdate.TabIndex = 25;
@@ -145,7 +147,7 @@
             this.btnCustomerDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCustomerDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustomerDelete.ForeColor = System.Drawing.Color.White;
-            this.btnCustomerDelete.Location = new System.Drawing.Point(484, 413);
+            this.btnCustomerDelete.Location = new System.Drawing.Point(681, 415);
             this.btnCustomerDelete.Name = "btnCustomerDelete";
             this.btnCustomerDelete.Size = new System.Drawing.Size(125, 35);
             this.btnCustomerDelete.TabIndex = 24;
@@ -190,6 +192,23 @@
             this.txtCustomerSearch.Size = new System.Drawing.Size(366, 32);
             this.txtCustomerSearch.TabIndex = 13;
             // 
+            // btnBack
+            // 
+            this.btnBack.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnBack.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
+            this.btnBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.White;
+            this.btnBack.Location = new System.Drawing.Point(70, 415);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(125, 35);
+            this.btnBack.TabIndex = 26;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnCustomerNew_Click);
+            // 
             // WorkerView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -221,5 +240,6 @@
         private System.Windows.Forms.Button btnCustomerSearch;
         private System.Windows.Forms.ComboBox cboCustomer;
         private System.Windows.Forms.TextBox txtCustomerSearch;
+        private System.Windows.Forms.Button btnBack;
     }
 }

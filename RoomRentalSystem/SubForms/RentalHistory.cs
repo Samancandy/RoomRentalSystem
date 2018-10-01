@@ -57,7 +57,6 @@ namespace RoomRentalSystem
         }
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (MenuForm.View.Equals(MenuForm.rentalUpdate)) return;
             Rental rental = null;
             if (dgvRental.Rows.Count != 0 && dgvRental.Rows != null)
                 rental = (Rental)dgvRental.CurrentRow.DataBoundItem;
@@ -75,7 +74,7 @@ namespace RoomRentalSystem
                 Form1.con.Open();
                 SqlCommand cmd = Form1.con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select * from tbPerson where PersonID like 'CS%'";
+                cmd.CommandText = "select * from tbRental";
                 IDataReader srd = cmd.ExecuteReader();
                 rental.Clear();
                 while (srd.Read())
@@ -83,7 +82,7 @@ namespace RoomRentalSystem
                     rental.Add(new Rental(srd.GetString(srd.GetOrdinal("RentalID")),
                                           srd.GetString(srd.GetOrdinal("PersonID")),
                                           srd.GetString(srd.GetOrdinal("RoomNo")),
-                                          srd.GetDateTime(srd.GetOrdinal("RentalDate")))
+                                          srd.GetDateTime(srd.GetOrdinal("RentedDate")))
                                );
                 }
                 Form1.con.Close();

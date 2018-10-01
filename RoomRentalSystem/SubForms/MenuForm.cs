@@ -31,6 +31,7 @@ namespace RoomRentalSystem
         public static WorkerForm worker = new WorkerForm();
         public static WorkerView workerView = new WorkerView();
         public static WorkingForm working = new WorkingForm();
+        public static WorkingUpdate workingUpdate = new WorkingUpdate();
         public static WorkingHistoryForm workingHistory = new WorkingHistoryForm();
 
         public static About about = new About();
@@ -56,6 +57,7 @@ namespace RoomRentalSystem
             this.Controls.Add(about); about.Visible = false;
             this.Controls.Add(workerView); workerView.Visible = false;
             this.Controls.Add(rentalUpdate); rentalUpdate.Visible = false;
+            this.Controls.Add(workingUpdate); workingUpdate.Visible = false;
         }
         private Color colorB = Color.Teal;
         private Color colorF = Color.FromArgb(255,0, 192, 192);
@@ -139,11 +141,13 @@ namespace RoomRentalSystem
         {
             if (View.Equals(working)) return;
             View.Visible = false;
+            working.FillWorkerID();
             working.Visible = true;
             View = working;
             btn.BackColor = colorF;
             btn = btnWorking;
             btn.BackColor = colorB;
+
         }
 
         private void btnWorkingHistory_Click(object sender, EventArgs e)
@@ -155,6 +159,7 @@ namespace RoomRentalSystem
             btn.BackColor = colorF;
             btn = btnWorkingHistory;
             btn.BackColor = colorB;
+            workingHistory.RefreshData("tbWorking");
         }
 
         private void btnWorker_Click(object sender, EventArgs e)

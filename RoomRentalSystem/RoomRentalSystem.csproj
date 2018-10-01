@@ -48,6 +48,8 @@
     <Compile Include="Classes\MotoBike.cs" />
     <Compile Include="Classes\Room.cs" />
     <Compile Include="Classes\Worker.cs" />
+    <Compile Include="Classes\Working.cs" />
+    <Compile Include="Classes\WorkingHistory.cs" />
     <Compile Include="SubForms\About.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -150,6 +152,12 @@
     <Compile Include="SubForms\VehicleViewForm.Designer.cs">
       <DependentUpon>VehicleViewForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SubForms\WorkingUpdate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SubForms\WorkingUpdate.Designer.cs">
+      <DependentUpon>WorkingUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Worker.cs" />
     <Compile Include="SubForms\WorkerForm.cs">
       <SubType>UserControl</SubType>
@@ -244,6 +252,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SubForms\WorkingHistoryForm.resx">
       <DependentUpon>WorkingHistoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForms\WorkingUpdate.resx">
+      <DependentUpon>WorkingUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

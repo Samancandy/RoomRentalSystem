@@ -32,18 +32,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dgvRental = new System.Windows.Forms.DataGridView();
-            this.btnUpdate = new System.Windows.Forms.Button();
+            this.dgvWorkingHistory = new System.Windows.Forms.DataGridView();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.dtpFrom = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnView = new System.Windows.Forms.Button();
+            this.btnCustomerNew = new System.Windows.Forms.Button();
+            this.btnCustomerUpdate = new System.Windows.Forms.Button();
+            this.btnCustomerDelete = new System.Windows.Forms.Button();
+            this.cboWH = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRental)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvWorkingHistory)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -86,13 +84,11 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.dateTimePicker1);
-            this.panel2.Controls.Add(this.dtpFrom);
-            this.panel2.Controls.Add(this.dgvRental);
-            this.panel2.Controls.Add(this.btnView);
-            this.panel2.Controls.Add(this.btnDelete);
-            this.panel2.Controls.Add(this.btnUpdate);
+            this.panel2.Controls.Add(this.cboWH);
+            this.panel2.Controls.Add(this.btnCustomerNew);
+            this.panel2.Controls.Add(this.btnCustomerUpdate);
+            this.panel2.Controls.Add(this.btnCustomerDelete);
+            this.panel2.Controls.Add(this.dgvWorkingHistory);
             this.panel2.Controls.Add(this.btnSearch);
             this.panel2.Controls.Add(this.txtSearch);
             this.panel2.Location = new System.Drawing.Point(60, 100);
@@ -101,28 +97,15 @@
             this.panel2.Size = new System.Drawing.Size(880, 488);
             this.panel2.TabIndex = 25;
             // 
-            // dgvRental
+            // dgvWorkingHistory
             // 
-            this.dgvRental.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRental.Location = new System.Drawing.Point(46, 99);
-            this.dgvRental.Margin = new System.Windows.Forms.Padding(2);
-            this.dgvRental.Name = "dgvRental";
-            this.dgvRental.RowTemplate.Height = 24;
-            this.dgvRental.Size = new System.Drawing.Size(789, 298);
-            this.dgvRental.TabIndex = 35;
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnUpdate.Location = new System.Drawing.Point(426, 425);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(116, 33);
-            this.btnUpdate.TabIndex = 32;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.dgvWorkingHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvWorkingHistory.Location = new System.Drawing.Point(46, 99);
+            this.dgvWorkingHistory.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvWorkingHistory.Name = "dgvWorkingHistory";
+            this.dgvWorkingHistory.RowTemplate.Height = 24;
+            this.dgvWorkingHistory.Size = new System.Drawing.Size(789, 298);
+            this.dgvWorkingHistory.TabIndex = 35;
             // 
             // btnSearch
             // 
@@ -136,6 +119,7 @@
             this.btnSearch.TabIndex = 21;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtSearch
             // 
@@ -148,63 +132,69 @@
             this.txtSearch.Size = new System.Drawing.Size(231, 32);
             this.txtSearch.TabIndex = 17;
             // 
-            // dtpFrom
+            // btnCustomerNew
             // 
-            this.dtpFrom.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
-            this.dtpFrom.CalendarTitleForeColor = System.Drawing.SystemColors.Control;
-            this.dtpFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFrom.Location = new System.Drawing.Point(46, 42);
-            this.dtpFrom.Name = "dtpFrom";
-            this.dtpFrom.Size = new System.Drawing.Size(150, 32);
-            this.dtpFrom.TabIndex = 36;
+            this.btnCustomerNew.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnCustomerNew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnCustomerNew.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Teal;
+            this.btnCustomerNew.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
+            this.btnCustomerNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCustomerNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomerNew.ForeColor = System.Drawing.Color.White;
+            this.btnCustomerNew.Location = new System.Drawing.Point(296, 430);
+            this.btnCustomerNew.Name = "btnCustomerNew";
+            this.btnCustomerNew.Size = new System.Drawing.Size(125, 35);
+            this.btnCustomerNew.TabIndex = 41;
+            this.btnCustomerNew.Text = "New";
+            this.btnCustomerNew.UseVisualStyleBackColor = false;
+            this.btnCustomerNew.Click += new System.EventHandler(this.btnCustomerNew_Click);
             // 
-            // dateTimePicker1
+            // btnCustomerUpdate
             // 
-            this.dateTimePicker1.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
-            this.dateTimePicker1.CalendarTitleForeColor = System.Drawing.SystemColors.Control;
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(256, 42);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(150, 32);
-            this.dateTimePicker1.TabIndex = 36;
+            this.btnCustomerUpdate.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnCustomerUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnCustomerUpdate.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnCustomerUpdate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnCustomerUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCustomerUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomerUpdate.ForeColor = System.Drawing.Color.White;
+            this.btnCustomerUpdate.Location = new System.Drawing.Point(502, 430);
+            this.btnCustomerUpdate.Name = "btnCustomerUpdate";
+            this.btnCustomerUpdate.Size = new System.Drawing.Size(125, 35);
+            this.btnCustomerUpdate.TabIndex = 39;
+            this.btnCustomerUpdate.Text = "Update";
+            this.btnCustomerUpdate.UseVisualStyleBackColor = false;
+            this.btnCustomerUpdate.Click += new System.EventHandler(this.btnCustomerUpdate_Click);
             // 
-            // label2
+            // btnCustomerDelete
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(215, 46);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(25, 24);
-            this.label2.TabIndex = 37;
-            this.label2.Text = "to";
+            this.btnCustomerDelete.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnCustomerDelete.BackColor = System.Drawing.Color.Red;
+            this.btnCustomerDelete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnCustomerDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnCustomerDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCustomerDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomerDelete.ForeColor = System.Drawing.Color.White;
+            this.btnCustomerDelete.Location = new System.Drawing.Point(710, 430);
+            this.btnCustomerDelete.Name = "btnCustomerDelete";
+            this.btnCustomerDelete.Size = new System.Drawing.Size(125, 35);
+            this.btnCustomerDelete.TabIndex = 38;
+            this.btnCustomerDelete.Text = "Delete";
+            this.btnCustomerDelete.UseVisualStyleBackColor = false;
+            this.btnCustomerDelete.Click += new System.EventHandler(this.btnCustomerDelete_Click);
             // 
-            // btnDelete
+            // cboWH
             // 
-            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnDelete.Location = new System.Drawing.Point(573, 425);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(116, 33);
-            this.btnDelete.TabIndex = 32;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = false;
-            // 
-            // btnView
-            // 
-            this.btnView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.btnView.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnView.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnView.Location = new System.Drawing.Point(719, 425);
-            this.btnView.Margin = new System.Windows.Forms.Padding(2);
-            this.btnView.Name = "btnView";
-            this.btnView.Size = new System.Drawing.Size(116, 33);
-            this.btnView.TabIndex = 32;
-            this.btnView.Text = "View Customer";
-            this.btnView.UseVisualStyleBackColor = false;
+            this.cboWH.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboWH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cboWH.FormattingEnabled = true;
+            this.cboWH.Items.AddRange(new object[] {
+            "Working",
+            "Working History"});
+            this.cboWH.Location = new System.Drawing.Point(46, 42);
+            this.cboWH.Name = "cboWH";
+            this.cboWH.Size = new System.Drawing.Size(198, 33);
+            this.cboWH.TabIndex = 42;
             // 
             // WorkingHistoryForm
             // 
@@ -219,7 +209,7 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRental)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvWorkingHistory)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -230,14 +220,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dtpFrom;
-        private System.Windows.Forms.DataGridView dgvRental;
-        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.DataGridView dgvWorkingHistory;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnView;
-        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnCustomerNew;
+        private System.Windows.Forms.Button btnCustomerUpdate;
+        private System.Windows.Forms.Button btnCustomerDelete;
+        private System.Windows.Forms.ComboBox cboWH;
     }
 }
